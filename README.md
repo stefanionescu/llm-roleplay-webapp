@@ -45,7 +45,7 @@ After testing the app with a couple dozen students, we discovered the following:
 
 <h3>📈 Results & Decision</h3>
 
-We got really high engagement from a couple users (15-30 minute sessions) but decided to pivot to a voice-first concept that we believe has stronger novelty and long-term defensibility. We don't think this app will meaningfully differentiate from existing roleplay platforms, even with all the changes mentioned above.
+We got really high engagement from a couple users (15-30 minute sessions) but decided to pivot to a voice-first concept that we believe is more relatable, novel and has long-term defensibility. We don't think this app will meaningfully differentiate from existing roleplay platforms, even with all the changes mentioned above.
 
 <h2>🙌 Why Open Source?</h2>
 
