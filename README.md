@@ -56,6 +56,7 @@ We believe in learning in public. We didn't hit PMF, but it helped us figure out
 There are a couple other repos you need in order to run the whole project:
 
 - [This one](https://github.com/stefanionescu/llm-roleplay-main-api) takes care of the main API you're gonna call from the frontend
+- [This one](https://github.com/stefanionescu/llm-roleplay-inference-api) takes care of inference and checking if a character used details from RAG chunks in a message
 - (Optional) [This](https://github.com/stefanionescu/redis-user-waitlist) is the user waitlisting logic running on Redis
 
 <h2>🛠 Tech Stack</h2>
