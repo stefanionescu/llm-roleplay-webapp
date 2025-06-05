@@ -1,0 +1,10 @@
+# ignore build/cache output
+.next
+node_modules
+dist
+public
+out
+
+# ignore config artifacts
+bun.lock
+*.lock

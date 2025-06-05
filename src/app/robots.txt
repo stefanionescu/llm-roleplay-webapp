@@ -1,0 +1,31 @@
+# Allow Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Allow PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# Allow Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Allow DuckDuckBot
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow Baiduspider
+User-agent: Baiduspider
+Allow: /
+
+# Allow YandexBot
+User-agent: YandexBot
+Allow: /
+
+# Allow Archive.org Bot
+User-agent: archive.org_bot
+Allow: /
+
+# Disallow all other crawlers
+User-agent: *
+Disallow: / 

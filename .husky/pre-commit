@@ -1,0 +1,7 @@
+# Run formatting and linting
+bun format-and-lint || exit 1
+
+# Stage the formatted files
+git add -u
+
+# Allow the commit to proceed with both original changes and formatting

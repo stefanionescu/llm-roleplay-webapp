@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Critical font performance rules */
+@layer base {
+    html,
+    body {
+        overscroll-behavior-y: none;
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* iOS-specific overscroll prevention */
+    @supports (-webkit-touch-callout: none) {
+        html,
+        body,
+        #chat-container {
+            overscroll-behavior-y: none;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
+    * {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga' 0;
+        font-variant-ligatures: none;
+    }
+
+    body {
+        font-display: optional;
+        @apply bg-background text-foreground;
+    }
+
+    /* Global spacing system */
+    :root {
+        /* Base safe area insets - these respect the device's actual safe areas */
+        --sai-top: env(safe-area-inset-top, 0px);
+        --sai-bottom: env(safe-area-inset-bottom, 0px);
+
+        /* Minimum spacing we want to maintain */
+        --min-top-space: 20px;
+
+        /* Additional padding for different contexts */
+        --header-height: 60px;
+
+        /* Computed values that combine safe areas with our minimums */
+        --safe-top: max(
+            var(--sai-top),
+            var(--min-top-space)
+        );
+        --safe-bottom: max(
+            var(--sai-bottom),
+            var(--min-top-space)
+        );
+
+        /* Character info specific spacing - used in both messages and chat input */
+        --character-info-top: max(
+            var(--safe-top),
+            calc(
+                var(--header-height) + var(--min-top-space)
+            )
+        );
+
+        /* Colors - dark by default */
+        --background: 0 0% 12.5%; /* This is #202020 */
+        --foreground: 0 0% 98%;
+        --card: 0 0% 12.5%;
+        --card-foreground: 0 0% 98%;
+        --popover: 0 0% 12.5%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 12.5%;
+        --secondary: 0 0% 15%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 0 0% 15%;
+        --muted-foreground: 240 5% 64.9%;
+        --accent: 0 0% 15%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 15%;
+        --input: 0 0% 15%;
+        --ring: 240 4.9% 83.9%;
+        --radius: 0.5rem;
+    }
+
+    /* Mobile devices in portrait - they often need more space */
+    @media screen and (max-width: 768px) and (orientation: portrait) {
+        :root {
+            --min-top-space: 40px;
+        }
+    }
+
+    /* Devices with notches/dynamic islands */
+    @supports (padding-top: env(safe-area-inset-top)) {
+        :root {
+            --character-info-top: max(
+                calc(var(--safe-top) + 20px),
+                calc(
+                    var(--header-height) +
+                        var(--min-top-space)
+                )
+            );
+        }
+    }
+}
+
+@keyframes fade458 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.25;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-from-top {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    /* Google Translate protection - simple and effective */
+    .notranslate,
+    .notranslate * {
+        translate: no !important;
+    }
+}
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    position: absolute;
+    right: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar:horizontal {
+    display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* For Firefox */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+    scrollbar-gutter: auto;
+}
+
+/* Hide horizontal scrollbar in Firefox */
+.custom-scrollbar.overflow-x-auto {
+    scrollbar-width: none;
+}
+
+/* Animation */
+.animate-slide-in {
+    animation: slide-in ease 0.5s;
+}
+
+.animate-slide-in-from-top {
+    animation: slide-in-from-top ease 0.3s;
+}
+
+.masks-group::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for masks-group */
+.masks-group {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Tiptap placeholder */
+.tiptap .is-editor-empty:first-child::before {
+    color: rgba(255, 255, 255, 0.5);
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+    position: relative;
+    top: 1px;
+}
+
+/* Code block styles */
+.hljs-copy {
+    color: white;
+    background: transparent;
+    border: none;
+    padding: '0.5rem 1rem';
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hljs-copy:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hljs-lang {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    width: 100%;
+    background-color: #333135;
+}
+
+.hljs-lang p {
+    margin: 0 !important;
+}
+
+code.hljs {
+    padding: 3px 5px;
+}
