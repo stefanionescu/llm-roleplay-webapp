@@ -38,6 +38,11 @@ After testing the app with a couple dozen students, we discovered the following:
 - Add STT: people don't wanna type long messages
 - It's much more convenient to talk
 
+👀 **Most Users Don't Want Anime**
+
+- Most people don't care about anime characters. All users that sent at least one message gravitated toward general or relatable characters such as College Boyfriend, Senior Girl and Vampire Student
+- Copying what character.ai did or the cargo-cult that followed is a mistake. It won't result in a mass market hit
+
 <h3>📈 Results & Decision</h3>
 
 We got really high engagement from a couple users (15-30 minute sessions) but decided to pivot to a voice-first concept that we believe has stronger novelty and long-term defensibility. We don't think this app will meaningfully differentiate from existing roleplay platforms, even with all the changes mentioned above.
@@ -48,7 +53,7 @@ We believe in learning in public. We didn't hit PMF, but it helped us figure out
 
 <h2>💻 Related Repos</h2>
 
-There are three other repos you need in order to run the whole project:
+There are a couple other repos you need in order to run the whole project:
 
 - [This one](https://github.com/stefanionescu/llm-roleplay-main-api) takes care of the main API you're gonna call from the frontend
 - (Optional) [This](https://github.com/stefanionescu/redis-user-waitlist) is the user waitlisting logic running on Redis
