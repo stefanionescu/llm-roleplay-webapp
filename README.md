@@ -92,6 +92,10 @@ There are a couple other repos you need in order to run the whole project:
     - next-intl
     - formatjs/intl-localematcher
 
+<h2>💽 Supabase Setup</h2>
+
+All the Supabase scripts you need are in the `sql` directory.
+
 <h2>🏛 Architecture</h2>
 
 <h3>📂 Features Organization</h3>
