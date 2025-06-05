@@ -164,9 +164,8 @@ bun run cf:deploy
 The following environment variables need to be configured:
 
 - Supabase configuration
-- Mixpanel tokens
-- API endpoints
-- Authentication settings
+- Mixpanel token
+- Inference and main API keys
 
 <h2>📊 Analytics</h2>
 
@@ -227,4 +226,4 @@ bun run format-and-lint
 
 <br />
 
-**Tags**: LLM, AI Characters, Character AI, RAG, TikTok, Retrieval Augmented Generation, RAG, Mixpanel, Roleplay, Supabase, Next.js, Bun, TypeScript
+**Tags**: LLM, AI Characters, Character AI, TikTok, Retrieval Augmented Generation, RAG, Mixpanel, Roleplay, Supabase, Next.js, Bun, TypeScript
