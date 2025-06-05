@@ -136,6 +136,7 @@ export const CategoriesSectionItems = ({
                             handleCategoryClick(index)
                         }
                         className={`relative flex shrink-0 transform-gpu cursor-pointer flex-row items-center justify-center rounded-xl py-5 max-md:h-[49px] max-md:min-w-[160px] md:h-[68px] md:min-w-[250px] ${index === selectedIndex ? 'bg-white' : 'bg-zinc-500/10 hover:opacity-70'} `}
+                        style={index === selectedIndex ? { scrollSnapAlign: 'center' } : {}}
                     >
                         <p
                             className={`text-ellipsis ${index === selectedIndex ? 'text-black' : 'text-white'} max-md:text-sm md:text-lg`}

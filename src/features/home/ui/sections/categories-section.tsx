@@ -16,6 +16,7 @@ export const CategoriesSection = () => {
             <div
                 ref={containerRef}
                 className={`no-scrollbar overflow-x-auto scroll-smooth`}
+                style={{ scrollSnapType: 'x mandatory' }}
             >
                 <div className={`flex w-max gap-2 px-4`}>
                     <CategoriesContent

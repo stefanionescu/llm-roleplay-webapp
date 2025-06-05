@@ -15,17 +15,12 @@ export const CategoriesSkeleton = () => {
                 .map((_, index) => {
                     const baseClasses =
                         'relative flex flex-shrink-0 transform-gpu cursor-pointer flex-row items-center justify-center py-5 overflow-hidden max-md:h-[49px] max-md:min-w-[160px] md:h-[68px] md:min-w-[250px]';
-                    const conditionalClass =
-                        index === centerIndex
-                            ? 'snap-center'
-                            : '';
-                    const combinedClasses =
-                        `${baseClasses} ${conditionalClass}`.trim();
-
+                 
                     return (
                         <Skeleton
                             key={index}
-                            className={combinedClasses}
+                            className={baseClasses}
+                            style={index === centerIndex ? { scrollSnapAlign: 'center' } : {}}
                         />
                     );
                 })}
