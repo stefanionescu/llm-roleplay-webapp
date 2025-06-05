@@ -16,13 +16,9 @@ This is a LLM roleplay app that's a combination of Character.ai and TikTok. Char
 
 We thought that adding videos inside LLM roleplay will make the app more engaging vs Character.ai.
 
-<br />
-
 <h3>🧠 Key Learnings</h3>
 
 After testing the app with a couple dozen students, we discovered the following:
-
-<br />
 
 🎨 **UI Needs a Revamp**
 
@@ -32,33 +28,23 @@ After testing the app with a couple dozen students, we discovered the following:
     - Centered on desktop
 - Overlay the chat history on top of the memory/video
 
-<br />
-
 📝 **Message Length Matters**
 
 - Initial character messages must be short
 - Reading long blocks of text feels like work (a problem that plagues most if not all roleplay apps)
-
-<br />
 
 🎤 **Voice Input is Key**
 
 - Add STT: people don't wanna type long messages
 - It's much more convenient to talk
 
-<br />
-
 <h3>📈 Results & Decision</h3>
 
 We got really high engagement from a couple users (15-30 minute sessions) but decided to pivot to a voice-first concept that we believe has stronger novelty and long-term defensibility. We don't think this app will meaningfully differentiate from existing roleplay platforms, even with all the changes mentioned above.
 
-<br />
-
 <h2>🙌 Why Open Source?</h2>
 
 We believe in learning in public. We didn't hit PMF, but it helped us figure out what _doesn't_ work in LLM consumer UX. We're open-sourcing the code in case it helps others building in this space — feel free to fork, remix, or reach out.
-
-<br />
 
 <h2>🛠 Tech Stack</h2>
 
@@ -71,8 +57,6 @@ We believe in learning in public. We didn't hit PMF, but it helped us figure out
 - **Database & Auth**: Supabase
 - **OTP**: Resend for email, Twilio for phone
 - **Analytics**: Mixpanel
-
-<br />
 
 <h3>📚 Key Libraries</h3>
 
@@ -96,8 +80,6 @@ We believe in learning in public. We didn't hit PMF, but it helped us figure out
     - next-intl
     - formatjs/intl-localematcher
 
-<br />
-
 <h2>🏛 Architecture</h2>
 
 <h3>📂 Features Organization</h3>
@@ -112,8 +94,6 @@ The application is organized into feature modules under `src/features/`:
 - `language/`: Internationalization
 - `feedback/`: User feedback modal
 
-<br />
-
 <h3>🔑 Key Components</h3>
 
 <h4>🤖 RAG System</h4>
@@ -127,13 +107,9 @@ The app uses RAG as follows:
 5. Call the inference API to check if the new reply includes details mentioned in the retrieved video descriptions
 6. Download every video whose description was used by the character and attach it as a memory to the message
 
-<br />
-
 <h4>📜 Virtualized Lists</h4>
 
 Both the chat history and session lists in the sidebar use `react-virtua` for virtualization.
-
-<br />
 
 <h2>🚀 Development Setup</h2>
 
@@ -144,8 +120,6 @@ Both the chat history and session lists in the sidebar use `react-virtua` for vi
 - Cloudflare account
 - Supabase account
 - Mixpanel account
-
-<br />
 
 <h3>⚙️ Installation</h3>
 
@@ -161,8 +135,6 @@ rm -rf node_modules .vercel deno.lock package-lock.json yarn.lock bun.lock
 bun install
 ```
 
-<br />
-
 <h3>💻 Development Server</h3>
 
 ```bash
@@ -170,8 +142,6 @@ bun dev
 ```
 
 The app will be available at `http://localhost:3000`. Note that you must add the Opengraph image, sidebar-logo and the app icon in `public` prior to running the app. Moreover, there are a couple `TODO` to solve throughout the app in order to run it smoothly.
-
-<br />
 
 <h2>🏗 Building and Deployment</h2>
 
@@ -189,8 +159,6 @@ NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 bunx @cloudflare/next-on-pages --e
 bun run cf:deploy
 ```
 
-<br />
-
 <h3>🔐 Environment Variables</h3>
 
 The following environment variables need to be configured:
@@ -199,8 +167,6 @@ The following environment variables need to be configured:
 - Mixpanel tokens
 - API endpoints
 - Authentication settings
-
-<br />
 
 <h2>📊 Analytics</h2>
 
@@ -211,8 +177,6 @@ We use Mixpanel for analytics and record the following:
 - Video watch time and whether a user replays specific videos
 - Error monitoring
 - Session replays
-
-<br />
 
 <h2>🔍 Code Quality</h2>
 
@@ -228,15 +192,11 @@ We use Mixpanel for analytics and record the following:
 - Prettier for code formatting
 - Husky for git hooks
 
-<br />
-
 <h3>⚡️ Type Safety</h3>
 
 - Strict TypeScript configuration
 - Zod for runtime type validation
 - Type-safe API calls with tRPC
-
-<br />
 
 <h2>👥 Contributing</h2>
 
@@ -251,8 +211,6 @@ bun run format-and-lint
 
 5. Submit a pull request
 
-<br />
-
 <h2>📜 Scripts</h2>
 
 - `dev`: Start development server
@@ -264,8 +222,6 @@ bun run format-and-lint
 - `analyze`: Analyze bundle size
 - `cf:preview`: Preview prod deployment on Cloudflare Pages
 - `cf:deploy`: Deploy to Cloudflare Pages
-
-<br />
 
 ---
 
