@@ -46,6 +46,13 @@ We got really high engagement from a couple users (15-30 minute sessions) but de
 
 We believe in learning in public. We didn't hit PMF, but it helped us figure out what _doesn't_ work in LLM consumer UX. We're open-sourcing the code in case it helps others building in this space — feel free to fork, remix, or reach out.
 
+<h2>💻 Related Repos</h2>
+
+There are three other repos you need in order to run the whole project:
+
+- [This one](https://github.com/stefanionescu/llm-roleplay-main-api) takes care of the main API you're gonna call from the frontend
+- (Optional) [This](https://github.com/stefanionescu/redis-user-waitlist) is the user waitlisting logic running on Redis
+
 <h2>🛠 Tech Stack</h2>
 
 <h3>🏗 Core Technologies</h3>
