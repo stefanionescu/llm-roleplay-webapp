@@ -41,7 +41,7 @@ After testing the app with a couple dozen students, we discovered the following:
 👀 **Most Users Don't Want Anime**
 
 - Most people don't care about anime characters. All users that sent at least one message gravitated toward general or relatable characters such as College Boyfriend, Senior Girl and Vampire Student
-- Copying what character.ai did or the cargo-cult that followed is a mistake. It won't result in a mass market hit
+- Copying what character.ai did or the cargo-cult that followed is a mistake. It won't result in a mass market hit tho you might be able to build a niche (and potentially profitable) product
 
 <h3>📈 Results & Decision</h3>
 
