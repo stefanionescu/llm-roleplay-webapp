@@ -238,7 +238,3 @@ bun run format-and-lint
 - `analyze`: Analyze bundle size
 - `cf:preview`: Preview prod deployment on Cloudflare Pages
 - `cf:deploy`: Deploy to Cloudflare Pages
-
----
-
-<br />
